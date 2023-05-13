@@ -7,3 +7,4 @@ homeform.addEventListener('submit',function(ev){
     document.querySelector('#batepapo').style.display='grid';
     ev.preventDefault();
 });
+        
