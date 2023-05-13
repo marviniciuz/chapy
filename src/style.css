@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+section#home{
+    display: grid;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+}
+section#batepapo{
+    display: none;
+}
