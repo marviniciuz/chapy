@@ -3,20 +3,35 @@
     padding: 0;
     list-style: none;
 }
-section#home{
+
+section#home {
     display: none;
     height: 100vh;
     align-items: center;
     text-align: center;
 }
-section#batepapo{
+
+section#batepapo {
     display: grid;
     grid-template-rows:1fr min-content;
     height: 100vh;
 }
-section#batepapo form{
+
+section#batepapo form {
     display: grid;
     grid-template-columns: 1fr min-content;
     padding: 20px;
-    background-color: grey;
+    background: #4086ff;
+}
+
+div#mensagens {
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+div#mensagens p{
+    margin: 10px;
+    padding: 30px;
+    background: #4086ff;
+    border-radius: 15px;
 }
