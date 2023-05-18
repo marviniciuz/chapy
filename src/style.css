@@ -5,14 +5,14 @@
 }
 
 section#home {
-    display: none;
+    display: grid;
     height: 100vh;
     align-items: center;
     text-align: center;
 }
 
 section#batepapo {
-    display: grid;
+    display: none;
     grid-template-rows:1fr min-content;
     height: 100vh;
 }
@@ -27,6 +27,14 @@ section#batepapo form {
 div#mensagens {
     overflow: auto;
     word-wrap: break-word;
+}
+
+section#batepapo form input{
+    padding: 7px;
+}
+
+section#batepapo form button{
+    padding: 7px 17px;
 }
 
 div#mensagens p{
