@@ -5,7 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chat</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+
+    section#home {
+    display: grid;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    }
+
+    section#batepapo {
+    display: none;
+    grid-template-rows:1fr min-content;
+    height: 100vh;
+    }
+
+    section#batepapo form {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    padding: 20px;
+    background: #4086ff;
+    }
+
+    div#mensagens {
+    overflow: auto;
+    word-wrap: break-word;
+    }
+
+    section#batepapo form input{
+    padding: 7px;
+    }
+
+    section#batepapo form button{
+    padding: 7px 17px;
+    }
+
+    div#mensagens p{
+    margin: 10px;
+    padding: 30px;
+    background: #4086ff;
+    border-radius: 15px;
+    }
+    </style>
 </head>
 <body>
     <section id="home">
@@ -22,7 +68,30 @@
         <input id="mensagens" placeholder = "digite sua mensagem" required/><button>enviar</button>
     </form>
     </section>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+    <script>
+    function messaghtml(name,msg){
+    return '<p><strong>'+name+':</strong>'+msg+'</p>';
+}
+
+var socket = io.connect('//' + document + ':' + location.port);
+
+    socket.on('message', function(data) {
+        console.log('message',data);
+    });
+    
+    socket.on('connect', function() {
+        socket.emit('message', {name: 'Marcus',message: 'teste'});
+});
+
+var ionome = document.querySelector('#nome');
+var iomensagem = document.querySelector('#mensagem');
+var homeform = document.querySelector('#home form');
+
+homeform.addEventListener('submit',function(ev){
+    document.querySelector('#home').style.display='none';
+    document.querySelector('#batepapo').style.display='grid';
+    ev.preventDefault();
+});
+    </script>
 </html>
+</body>
