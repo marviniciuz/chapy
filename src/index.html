@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chat</title>
     <style>
-    *{
+        *{
     margin: 0;
     padding: 0;
     list-style: none;
@@ -68,30 +68,25 @@
         <input id="mensagens" placeholder = "digite sua mensagem" required/><button>enviar</button>
     </form>
     </section>
+    </html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
     <script>
-    function messaghtml(name,msg){
-    return '<p><strong>'+name+':</strong>'+msg+'</p>';
-}
-
-var socket = io.connect('//' + document + ':' + location.port);
-
-    socket.on('message', function(data) {
-        console.log('message',data);
-    });
-    
+    function messegehttml(name,msg){
+        return '<p><strong>'+name+':</strong>'+msg+'</p>';
+    }
+    var socket = io.connect('//' + document.domain + ':' + location.port);
     socket.on('connect', function() {
-        socket.emit('message', {name: 'Marcus',message: 'teste'});
-});
+        socket.emit('message', {name: 'Marcus',message:'Testte'});
+    });
 
-var ionome = document.querySelector('#nome');
-var iomensagem = document.querySelector('#mensagem');
-var homeform = document.querySelector('#home form');
+    var ionome = document.querySelector('#nome');
+    var iomensagem = document.querySelector('#mensagem');
+    var homeform = document.querySelector('#home form');
 
-homeform.addEventListener('submit',function(ev){
+    homeform.addEventListener('submit',function(ev){
     document.querySelector('#home').style.display='none';
     document.querySelector('#batepapo').style.display='grid';
     ev.preventDefault();
-});
+    });
     </script>
-</html>
 </body>
