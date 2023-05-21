@@ -75,6 +75,9 @@
         return '<p><strong>'+name+':</strong>'+msg+'</p>';
     }
     var socket = io.connect('//' + document.domain + ':' + location.port);
+    socket.on('message', function(data) {
+        console.log('message',data)
+    });
     socket.on('connect', function() {
         socket.emit('message', {name: 'Marcus',message:'Testte'});
     });
