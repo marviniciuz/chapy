@@ -3,24 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>CHAPY</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='script/script.js')}}"></script>
 </head>
 <body>
-    <div>
+    <div class="chat"></div>
+    <form>
         <input type="text" placeholder="insira seu nome">
         <input type="text" placeholder="insira sua mensagem">
         <button type="submit">ENVIAR</button>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        window.onload = function(){
-            const socket = io('http://127.0.0.1:5000');
-
-            socket.on('conect',() => {
-               socket.send('usuario conectado ao socket')
-            })
-        }
-        
-    </script>
+    </form>
 </body>
 </html>
