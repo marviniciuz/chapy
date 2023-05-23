@@ -5,9 +5,22 @@
 
 .chat span {
     margin-bottom: 10px;
-
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 form {
     margin-top: 15px;
+}
+
+input {
+    border: 6px solid;
+    border-radius: 40px;
+    color: #526D82;
+}
+button{
+    border: 6px solid;
+    border-radius: 40px;
+    color: #526D82;
+    padding-bottom: 4px;
 }
